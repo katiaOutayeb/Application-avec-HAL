@@ -335,11 +335,11 @@ function getparannee(annee, equipe, resolve, reject) {
         if(equipe == false){
             var url = "https://api.archives-ouvertes.fr/search/DAVID/?q=*&fq=producedDateY_i:" + annee + "&rows=1000&indent=true&facet=true&facet.field=docType_s";
         }else{
-            var url = "https://api.archives-ouvertes.fr/search/DAVID/?q=*";
-            $.each(equipe, function (key, value) {
-                url += value.nom + "%20OR%20";
-            });
-            url += "*&fq=producedDateY_i:" + annee + "&rows=1000&indent=true&facet=true&facet.field=docType_s";
+            var url = "https://api.archives-ouvertes.fr/search/DAVID/?q=(" + "\"" + equipe[0].nom +"\"";
+            for (var i = 1; i < equipe.length; i++) {
+                url += " OR " + "\"" + equipe[i].nom +"\"";
+            }
+            url += ")&fq=producedDateY_i:" + annee + "&rows=1000&indent=true&facet=true&facet.field=docType_s";
         }
         console.log(url);
         $.ajax({
