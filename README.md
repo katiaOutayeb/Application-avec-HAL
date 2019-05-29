@@ -12,6 +12,8 @@ L’application proposera les fonctionnalités suivantes :
 * Une visualisation des statistiques des différentes équipes du laboratoire DAVID
 * Une visualisation des publications par année et par type du document des différentes équipes du laboratoire DAVID
 
+* Lien Vers le site [https://katiaoutayeb.github.io/Application-avec-HAL/]
+
 
 
 ## Documentation ####
